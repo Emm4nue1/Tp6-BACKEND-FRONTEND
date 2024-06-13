@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URI = 'mongodb://localhost/proyectodb';
+const URI = 'mongodb://localhost:27017/tp6BD';
 mongoose.connect(URI)
 .then(db=>console.log('DB is connected'))
 .catch(err=>console.error(err))
