@@ -8,9 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:4200' }));
 
-// Routes
+// Routes (Modificar)
+
 // app.use('/api/agente', require('./routes/agente.route.js'));
 // app.use('/api/sector', require('./routes/sector.route'));
+
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
