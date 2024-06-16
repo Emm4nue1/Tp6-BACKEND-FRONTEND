@@ -4,10 +4,9 @@ const ticket = require('../controllers/pto2/agencia.controller');
 const express = require('express');
 const router = express.Router();
 //Definimos las rutas
-router.post('/',ticket.create);
+router.post('/',ticket.createTransaccion);
 router.get('/',ticket.getTransacciones);
-router.get('/:id',ticket.getTransaccionesCliente);
-//Revisar
-router.get('/',ticket.getTransaccionesDivisas);
+router.get('/:email',ticket.getTransaccionesCliente);
+router.get('/operaciones/:monedaOrigen/:monedaDestino',ticket.getTransaccionesDivisas);
 //Exportamos el modulo de rutas
 module.exports = router;

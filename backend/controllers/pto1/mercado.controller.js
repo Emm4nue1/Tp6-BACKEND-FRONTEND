@@ -1,4 +1,4 @@
-const producto = require("../../models/pto1/producto");
+const Producto = require("../../models/pto1/producto");
 
 // Crea un nuevo producto
 async function createProducto(req, res) {
@@ -30,13 +30,13 @@ async function deleteProducto(req, res) {
 // Actualiza un producto
 async function editProducto(req, res) {
   try {
-    const productoActualizado = new Producto(req.body);
-    await Producto.updateOne({ _id: req.body._id }, productoActualizado);
+    await Producto.updateOne({ _id: req.body._id }, req.body);
     res.json({ status: '1', msg: 'Producto actualizado' });
   } catch (error) {
     res.status(400).json({ status: '0', msg: 'Error procesando la operacion' });
   }
 }
+
 
 // Obtiene los productos destacados
 async function getProductosDestacados(req, res) {

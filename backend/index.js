@@ -10,10 +10,9 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 
 // Routes (Modificar)
 
-// app.use('/api/agente', require('./routes/agente.route.js'));
-// app.use('/api/sector', require('./routes/sector.route'));
-
-
+app.use('/producto', require('./routes/pto1.routes'));
+app.use('/agencia', require('./routes/pto2.routes'));
+/* app.use('/boleteria', require('./routes/pto3.routes')); */
 
 // Error handling middleware
 app.use((err, req, res, next) => {

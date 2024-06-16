@@ -1,6 +1,5 @@
 //Defino controlador para el manejo de CRUD
-const espectador = require('../controllers/pto3/espectador.controller');
-const ticket = require('../controllers/pto3/ticket.controller');
+const espectador = require('../controllers/pto3/boleteria.controller');
 
 //Creamos el manejador de rutas
 const express = require('express');

@@ -19,7 +19,7 @@ async function getTransacciones(req, res) {
 
 // Recuperar el histórico de transacciones de un determinado cliente (GET)
 async function getTransaccionesCliente(req, res) {
-  const transacciones = await Transaccion.find({ emailCliente: req.params.email });
+  const transacciones = await Transaccion.find({ email: req.params.email });
   res.json(transacciones);
 }
 

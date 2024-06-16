@@ -10,4 +10,4 @@ const ProductoSchema = new Schema({
   destacado: { type: Boolean, required: true }
 });
 
-module.exports = mongoose.models.Producto || mongoose.model('Producto', ProductoSchema);
+module.exports = mongoose.models.Producto || mongoose.model('pto1-Productos', ProductoSchema);
