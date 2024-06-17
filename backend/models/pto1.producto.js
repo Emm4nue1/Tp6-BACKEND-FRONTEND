@@ -8,6 +8,6 @@ const ProductoSchema = new Schema({
   precio: { type: Number, required: true },
   stock: { type: Number, required: true },
   destacado: { type: Boolean, required: true }
-});
+},{ versionKey: false });
 
 module.exports = mongoose.models.Producto || mongoose.model('pto1-Productos', ProductoSchema);

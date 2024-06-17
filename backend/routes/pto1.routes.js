@@ -1,5 +1,5 @@
 //Defino controlador para el manejo de CRUD
-const producto = require('../controllers/pto1/mercado.controller');
+const producto = require('../controllers/pto1.mercado.controller');
 //Creamos el manejador de rutas
 const express = require('express');
 const router = express.Router();

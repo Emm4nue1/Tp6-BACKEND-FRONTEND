@@ -1,5 +1,5 @@
 //Defino controlador para el manejo de CRUD
-const ticket = require('../controllers/pto2/agencia.controller');
+const ticket = require('../controllers/pto2.agencia.controller');
 //Creamos el manejador de rutas
 const express = require('express');
 const router = express.Router();

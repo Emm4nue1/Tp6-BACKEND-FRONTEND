@@ -1,5 +1,6 @@
-const Espectador = require('../../models/pto3/boleteria');
-//Espectador
+const { Espectador, Ticket } = require('../models/pto3.boleteria');
+
+/* Espectador */
 // Dar de alta un Espectador (POST)
 async function createEspectador(req, res) {
   try {
@@ -23,7 +24,7 @@ async function getEspectador(req, res) {
   res.json(espectador);
 }
 
-//Ticket
+/* Ticket */
 async function createTicket(req, res) {
   try {
     const ticket = new Ticket(req.body);
@@ -53,11 +54,10 @@ async function deleteTicket(req, res) {
 // Modificar un Ticket (PUT)
 async function editTicket(req, res) {
   try {
-    const ticketActualizado = new Ticket(req.body);
-    await Ticket.updateOne({ _id: req.body._id }, ticketActualizado);
+    await Ticket.updateOne({ _id: req.params.id }, req.body);
     res.json({ status: '1', msg: 'Ticket actualizado' });
   } catch (error) {
-    res.status(400).json({ status: '0', msg: 'Error procesando la operacion' });
+    res.status(400).json({ status: '0', msg: 'Error procesando la operacion', error: error.message });
   }
 }
 

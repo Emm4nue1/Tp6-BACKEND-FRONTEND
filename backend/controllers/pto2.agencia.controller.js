@@ -1,4 +1,4 @@
-const Transaccion = require('../../models/pto2/transaccion');
+const Transaccion = require('../models/pto2.transaccion');
 
 // Dar de alta una Transaccion (POST)
 async function createTransaccion(req, res) {
