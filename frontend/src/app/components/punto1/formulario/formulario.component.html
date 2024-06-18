@@ -1,0 +1,84 @@
+<div class="container">
+    <form class="p-1 needs-validation text-center" novalidate>
+        <div class="d-flex justify-content-end mx-1">
+            <a routerLink="/punto1" routerLinkActive="active">
+                <i class="bi bi-arrow-left-circle-fill fs-1 link-secondary"></i>
+            </a>
+        </div>
+        <h1>Registro de productos</h1>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <div class="col-5">
+                    <label class="col col-form-label">Nombre del producto</label>
+                    <div class="input-group box-form">
+                        <input type="text" class="form-control" aria-label="Nombre" name="nombre" required [(ngModel)]="producto.nombre" />
+                    </div>
+                    <div class="valid-feedback"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="d-flex justify-content-center">
+                <div class="col-6">
+                    <label class="col col-form-label">Descripcion</label>
+                    <div class="input-group box-form">
+                        <textarea type="text" class="form-control" name="descripcion" required [(ngModel)]="producto.descripcion"></textarea>
+                    </div>
+                    <div class="valid-feedback"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <div class="col-6">
+                    <label class="col col-form-label">URL de Imagen</label>
+                    <div class="input-group box-form">
+                        <input type="text" class="form-control" name="imagen" id="autoSizingInputGroup" required [(ngModel)]="producto.imagen"/>
+                    </div>
+                    <div class="valid-feedback"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <img [src]="producto.imagen" class="w-25"  alt="Vista previa">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <div class="col-2">
+                    <label class="col col-form-label mt-2">Precio</label>
+                    <div class="col box-form">
+                        <input type="number" class="form-control" name="precio" id="inputMail" required [(ngModel)]="producto.precio"/>
+                    </div>
+                    <div class="valid-feedback"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <div class="col-2">
+                    <label class="col col-form-label mt-2">Stock</label>
+                    <div class="col box-form">
+                        <input type="number" class="form-control" name="stock" id="inputStock" required [(ngModel)]="producto.stock"/>
+                    </div>
+                    <div class="valid-feedback"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="d-flex justify-content-center">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="destacado" id="flexCheckDefault" [(ngModel)]="producto.destacado"/>
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Descatacar Producto
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-success m-3" (click)="nuevoProducto()">Crear Producto</button>
+            <button type="reset" class="btn btn-danger m-3">Cancelar</button>
+        </div>
+    </form>
+</div>

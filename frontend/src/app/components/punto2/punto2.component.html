@@ -1,1 +1,83 @@
-<p>punto2 works!</p>
+<div class="container-fluid p-2">
+  <div class="row m-2">
+    <div class="col-md-8 d-none d-sm-block d-sm-none d-md-block">
+      <header class="page-b-h">Convertidor de divisas</header>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"><i class="flag flag-us"></i><br />USD</th>
+            <th scope="col"><i class="flag flag-eu"></i><br />EUR</th>
+            <th scope="col"><i class="flag flag-ar"></i><br />ARG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><i class="flag flag-us"></i>1 USD<br />INVERSA</th>
+            <td>1.00000<br />1.00000</td>
+            <td>0.919901<br />1.087074</td>
+            <td>64.87725<br />0.015414</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="flag flag-eu"></i>1 EUR<br />INVERSA</th>
+            <td>1.087074<br />0.919901</td>
+            <td>1.00000<br />1.00000</td>
+            <td>70.52637<br />0.014179</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="flag flag-uk"></i>1 GBP<br />INVERSA</th>
+            <td>1.232332<br />0.811469</td>
+            <td>1.133623<br />0.882127</td>
+            <td>79.95034<br />0.012508</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12 col-12">
+      <header class="page-b-h2">Convertidor de divisas</header>
+      <form>
+        <fieldset class="p-3">
+          <div class="mb-3">
+            <label for="TextInput" class="form-label" style="color: white">Email</label>
+            <input type="email" class="form-control" placeholder="@Correo electronico" name="email" [(ngModel)]="trasaccion.email"/>
+          </div>
+          <div class="mb-3">
+            <label for="Select" class="form-label" style="color: white">De</label>
+            <select class="form-select" name="origen" [(ngModel)]="trasaccion.monedaOrigen">
+              <option value="ARS">Pesos Argentinos</option>
+              <option value="USD">Dolares (EEUU)</option>
+              <option value="BRL">Reales (BRL)</option>
+              <option value="GBP">Libra Esterlina (UK)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="TextInput" class="form-label" style="color: white">Cantidad</label>
+            <input type="text" class="form-control" placeholder="Cantidad" name="cantidad" [(ngModel)]="trasaccion.cantidadOrigen"/>
+          </div>
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label" style="color: white">A</label>
+            <select  class="form-select" name="destino" [(ngModel)]="trasaccion.monedaDestino">
+              <option value="ARS">Pesos Argentinos</option>
+              <option value="USD">Dolares (EEUU)</option>
+              <option value="BRL">Reales (BRL)</option>
+              <option value="GBP">Libra Esterlina (UK)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label" style="color: white">Total</label>
+            <input type="text" class="form-control" name="total" [(ngModel)]="trasaccion.cantidadDestino" /> 
+          </div>
+          <div class="d-grid">
+            <button type="button" class="btn btn-lg btn-secondary" (click)="intercambio(trasaccion.monedaOrigen,trasaccion.monedaDestino,trasaccion.cantidadOrigen)">
+              Previsualizar
+            </button>
+
+            <button type="button" class="btn btn-lg btn-warning mt-3" (click)="nuevaOperacion()">
+              Guardar operacion
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
