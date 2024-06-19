@@ -28,4 +28,16 @@ export class TransaccionService {
     const body = JSON.stringify(transaccion);
     return this.http.post(this.url,body,{ headers: headers });
   }
+
+  traerTransacciones():Observable<any>{
+    const headers = new HttpHeaders({ });
+    return this.http.get(this.url,{ headers: headers });
+  }
+
+  traerTransaccionesFiltro(origen:string,destino:string):Observable<any>{
+    const url= `http://localhost:3000/agencia/operaciones/${origen}/${destino}`;
+    const headers = new HttpHeaders({ });
+    return this.http.get(url,{ headers: headers });
+  }
+
 }
