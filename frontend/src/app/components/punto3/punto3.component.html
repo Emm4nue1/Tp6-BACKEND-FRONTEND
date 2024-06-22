@@ -1,38 +1,35 @@
-<!-- <div class="container">
-    <form  class="p-2 mt-5">
-        <div class="mb-3">
-            <label for="exampleInputDni" class="form-label">DNI</label>
-            <input name="dni" type="number" class="form-control" id="exampleInputDni" min="1" max="460000" [(ngModel)]="ticket.dni">
-        </div>
+<div class="container p-4">
+    <div class="card">
+        <div class="card-header text-center">Ticket</div>
+        <div class="row">
+            <div class="col">
+                <form class="p-4">
+                    <div class="mb-3">
+                        <label class="form-label">Fecha</label>
+                        <input name="fecha" type="date" class="form-control" [(ngModel)]="ticket.fechaCompra" />
+                    </div>
 
-        <div class="mb-3">
-            <label for="exampleInputNombre" class="form-label">Nombre y Apellido</label>
-            <input name="nombre" type="text" class="form-control" id="exampleInputNombre" [(ngModel)]="ticket.nombre">
-        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio de entrada</label>
+                        <input name="precio" type="number" step="0.001" class="form-control" min="1" [(ngModel)]="ticket.precioTicket" />
+                    </div>
 
-        <div class="mb-3">
-            <label for="exampleInputTipo" class="form-label">Espectador</label>   
-            <select name="tipo" id="" class="form-select" [(ngModel)]="ticket.tipo">
-                <option disabled selected>Seleccione</option>
-                <option [value]="TIPO.Local">Local</option>
-                <option [value]="TIPO.Extranjero">Extranjero</option>
-            </select>
-        </div>
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Espectador</label>
+                        <select name="seleccionarEspectador" class="form-select" [(ngModel)]="idSeleccionado" (change)="idSeleccionado">
+                            <option selected disabled>Seleccionar un espectador</option>
+                            <option *ngFor="let x of espectadores" [ngValue]="x._id"> {{x.nombre}} {{x.apellido}} ({{x.dni}}) + {{x._id}} </option>
+                        </select>
+                    </div>
 
-        <div class="mb-3">
-            <label for="exampleInputFecha" class="form-label">Fecha</label>
-            <input name="fecha" type="date" class="form-control" id="exampleInputFecha" [(ngModel)]="ticket.fecha">
+                    <div class="d-flex justify-content-evenly mt-5">
+                        <button type="button" class="btn btn-success" (click)="nuevoTicket()">Agregar</button>
+                        <button type="reset" class="btn btn-danger">Cancelar</button>
+                        <button type="button" class="btn btn-primary" routerLink="" routerLinkActive="active"> Mostrar lista</button>
+                        <button type="reset" class="btn btn-success" routerLink="/punto3/espectador" routerLinkActive="active"> Nuevo Espectador</button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="exampleInputDni" class="form-label">Precio de entrada</label>
-            <input name="precio" type="number" step="0.001" class="form-control" id="exampleInputPrecio" min="1" [(ngModel)]="ticket.precio" (change)="ticket.precio = parseFloat(ticket.precio.toFixed(3))">
-        </div>
-
-        <div class="d-flex justify-content-evenly mt-5">
-            <button type="button" class="btn btn-success" (click)="guardarTicket()">Agregar</button>
-            <button type="reset" class="btn btn-danger">Cancelar</button>
-            <button type="button" class="btn btn-primary" routerLink="/punto-5/resumen" routerLinkActive="active">Resumen</button>
-        </div>
-    </form>
-</div> -->
+    </div>
+</div>

@@ -1,17 +1,13 @@
-export enum CategoriaEspectador {
-  Extranjero = 'Extranjero',
-  Local = 'Local'
-}
+import { Espectador } from "./pto3.espectador";
 
 export class Ticket {
+  _id!:any;
   precioTicket: number;
-  categoriaEspectador: CategoriaEspectador;
   fechaCompra: string; 
-  espectador: string; // modificar
+  espectador: Espectador;
 
-  constructor(precioTicket: number,categoriaEspectador: CategoriaEspectador,fechaCompra: string,espectador: string){
+  constructor(precioTicket: number,fechaCompra: string,espectador: Espectador){
     this.precioTicket = precioTicket;
-    this.categoriaEspectador = categoriaEspectador;
     this.fechaCompra = fechaCompra;
     this.espectador = espectador;
   }

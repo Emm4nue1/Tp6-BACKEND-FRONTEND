@@ -8,8 +8,10 @@ async function createEspectador(req, res) {
     await espectador.save();
     res.json({ status: '1', msg: 'Espectador guardado.' });
   } catch (error) {
-    res.status(400).json({ status: '0', msg: 'Error procesando operacion.' });
-  }
+    console.error('Error:', error);
+    console.log('Cuerpo de la solicitud:', req.body);
+    res.status(400).json({ status: '0', msg: 'Error procesando operacion.', error: error.message });
+  }  
 }
 
 // Obtener todos los Espectadores (GET)

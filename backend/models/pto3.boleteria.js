@@ -6,7 +6,7 @@ const EspectadorSchema = new Schema({
   nombre: { type: String, required: true },
   dni: { type: String, required: true },
   email: { type: String, required: true },
-  categoria: { type: String, enum: ['Local', 'Extranjero'], required: true }
+  categoria: { type: String,required: true }
 },{ versionKey: false });
 
 const TicketSchema = new Schema({

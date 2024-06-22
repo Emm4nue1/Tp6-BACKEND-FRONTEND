@@ -1,5 +1,5 @@
 export class Transaccion {
-    id?:string;
+    id!:string;
     monedaOrigen: string;
     cantidadOrigen: number;
     monedaDestino: string;
